@@ -26,7 +26,7 @@ public class Guru99 {
      */
 
     @Test
-    public void test01() throws IOException {
+    public void test01() throws IOException, InterruptedException {
 
         Guru99DrapAndDropPage guru = new Guru99DrapAndDropPage();
         Driver.getDriver().get(ConfigReader.getProperty("guruUrl"));
@@ -36,15 +36,19 @@ public class Guru99 {
         Actions actions = new Actions(Driver.getDriver());
         //DEBIT SIDE da Account bolumune BANK butonunu surukle ve birak
         actions.dragAndDrop(guru.bankButton, guru.debitAccountArea).perform();
+        Thread.sleep(2000);
 
         //    CREDIT SIDE da Account bolumune SALES butonunu surukle ve birak
         actions.dragAndDrop(guru.salesButton, guru.creditAccountArea).perform();
+        Thread.sleep(2000);
 
         //    DEBIT SIDE da Amount bolumune 5000 butonunu surukle ve birak
         actions.dragAndDrop(guru.fiveThousondButton, guru.debitAmountArea).perform();
+        Thread.sleep(2000);
 
         //    CREDIT SIDE da Amount bolumune ise ikinci 5000  butonunu surukle ve birak
         actions.dragAndDrop(guru.fiveThousondButton2,guru.creditAmountArea).perform();
+        Thread.sleep(2000);
 
         //    Perfect butonun goruntulendigini dogrulayin
         Assert.assertTrue(guru.perfectButton.isDisplayed());
