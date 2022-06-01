@@ -29,5 +29,17 @@ public class HotelMyCampPage {
     @FindBy(xpath = "//*[.='Username or password is incorrect, please correct them and try again']")
     public WebElement failedLogin;
 
+    @FindBy(id = "menuHotels")
+    public WebElement hotelMenu;
+
+    @FindBy (xpath = "//a[@href='/admin/HotelAdmin']")
+    public WebElement hotelList;
+
+    @FindBy (xpath = "//a[@href='/admin/HotelAdmin/Create']")
+    public WebElement addHotel;
+
+    @FindBy (xpath = "(//input[@class='form-control input-lg required'])[1]")
+    public WebElement codeText;
+
 
 }
