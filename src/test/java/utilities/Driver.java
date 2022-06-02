@@ -18,6 +18,9 @@ public class Driver {
     en sonda driver'in kapatilmasi tercih edilmistir
      */
 
+    private Driver() { //obje olusturlmamasi icin burayi olusturduk
+    }
+
     static WebDriver driver;
 
     public static WebDriver getDriver() {

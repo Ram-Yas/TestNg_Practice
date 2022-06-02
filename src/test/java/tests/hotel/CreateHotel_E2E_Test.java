@@ -1,7 +1,9 @@
 package tests.hotel;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HotelMyCampPage;
 import utilities.ConfigReader;
@@ -31,11 +33,22 @@ public class CreateHotel_E2E_Test {
         hotelMyCamp.addHotel.click();
 
         //7. Açılan sayfadaki tüm metin kutularına istediğiniz verileri girin.
-        Faker faker = new Faker();
+
         Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(hotelMyCamp.codeText,ConfigReader.getProperty("hotelNewCode"))
+                .sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hotelNewName"))
+                .sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hotelNewAdresse"))
+                .sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hotelNewPhone"))
+                .sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hotelNewEmail"))
+                .sendKeys(Keys.TAB).sendKeys(Keys.END)
+                .sendKeys(Keys.TAB).sendKeys(Keys.ENTER)
+                .perform();
+
 
         //8. Save butonuna tıklayın.
         //9. “Hotel was inserted successfully” textinin göründüğünü test edin.
+        Assert.assertTrue(hotelMyCamp.registrationSuccesfullyText.isDisplayed());
         //10. OK butonuna tıklayın.
+        hotelMyCamp.okButtonEnd.click();
     }
 }

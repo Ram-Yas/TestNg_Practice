@@ -41,5 +41,10 @@ public class HotelMyCampPage {
     @FindBy (xpath = "(//input[@class='form-control input-lg required'])[1]")
     public WebElement codeText;
 
+    @FindBy (xpath = "//div[@class='bootbox-body']\n")
+    public WebElement registrationSuccesfullyText;
+
+    @FindBy (xpath = "    //button[@data-bb-handler='ok']\n")
+    public WebElement okButtonEnd;
 
 }
