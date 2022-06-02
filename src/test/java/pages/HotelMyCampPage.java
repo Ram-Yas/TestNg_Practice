@@ -44,7 +44,7 @@ public class HotelMyCampPage {
     @FindBy (xpath = "//div[@class='bootbox-body']\n")
     public WebElement registrationSuccesfullyText;
 
-    @FindBy (xpath = "    //button[@data-bb-handler='ok']\n")
+    @FindBy (xpath = "//button[@class='btn btn-primary']")
     public WebElement okButtonEnd;
 
 }

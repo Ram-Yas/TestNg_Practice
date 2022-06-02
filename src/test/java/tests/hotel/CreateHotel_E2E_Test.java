@@ -12,7 +12,7 @@ import utilities.Driver;
 public class CreateHotel_E2E_Test {
 
     @Test
-    public void createHotel() {
+    public void createHotel() throws InterruptedException {
 
         HotelMyCampPage hotelMyCamp = new HotelMyCampPage();
         //1. Tests packagenin altına class olusturun: CreateHotel
@@ -44,11 +44,17 @@ public class CreateHotel_E2E_Test {
                 .sendKeys(Keys.TAB).sendKeys(Keys.ENTER)
                 .perform();
 
-
+Thread.sleep(2000);
         //8. Save butonuna tıklayın.
         //9. “Hotel was inserted successfully” textinin göründüğünü test edin.
-        Assert.assertTrue(hotelMyCamp.registrationSuccesfullyText.isDisplayed());
+        String actualAddAlert = hotelMyCamp.registrationSuccesfullyText.getText();
+        String expectedAddAlert = ConfigReader.getProperty("hotelmycampAddHotelAlertText");
+
+        Assert.assertEquals(actualAddAlert,expectedAddAlert);
+
         //10. OK butonuna tıklayın.
         hotelMyCamp.okButtonEnd.click();
+
+        Driver.closeDriver();
     }
 }
