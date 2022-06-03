@@ -13,8 +13,6 @@ import java.util.List;
 public class ReactShoppingTest {
 
 
-
-
     @Test
     public void reactShoppingTest() {
         ReactShoppingPage reactShopping = new ReactShoppingPage();
@@ -38,7 +36,9 @@ public class ReactShoppingTest {
                 // (Her ürün 1 defadan fazla eklenemez!)
 
         // 5.Her bir öğenin fiyatını toplayın ve sonucunuzu web sitesiyle karşılaştırın
+
         // 6.Sonuçlar eşleşiyorsa  konsola test pass yazirin
+
         // 7.Checkout'a tıklayın
     }
 }
