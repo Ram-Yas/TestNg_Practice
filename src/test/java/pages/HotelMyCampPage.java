@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class HotelMyCampPage {
 
     public HotelMyCampPage() {
@@ -23,6 +25,8 @@ public class HotelMyCampPage {
     @FindBy (xpath = "//input[@id='btnSubmit']")
     public WebElement loginSubmitButton;
 
+            @FindBy (xpath ="//button[@class='btn btn-success uppercase']" )
+            public WebElement loginAdminRoom;
     @FindBy (xpath = "//div[@id='datatable_ajax_wrapper']")
     public WebElement table;
 
@@ -46,5 +50,17 @@ public class HotelMyCampPage {
 
     @FindBy (xpath = "//button[@class='btn btn-primary']")
     public WebElement okButtonEnd;
+
+    @FindBy (xpath = "//thead//tr[1]//th")
+    public List<WebElement> baslikSutun;
+
+    @FindBy (xpath = "//tbody")
+    public WebElement tumBody;
+
+    @FindBy (xpath = "//tbody//tr")
+    public List<WebElement> bodySatirlar;
+
+    @FindBy (xpath = "//tbody//tr[4]")
+    public WebElement dorduncuSatir;
 
 }
