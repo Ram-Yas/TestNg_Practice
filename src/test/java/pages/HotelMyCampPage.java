@@ -25,8 +25,9 @@ public class HotelMyCampPage {
     @FindBy (xpath = "//input[@id='btnSubmit']")
     public WebElement loginSubmitButton;
 
-            @FindBy (xpath ="//button[@class='btn btn-success uppercase']" )
-            public WebElement loginAdminRoom;
+    @FindBy (xpath ="//button[@class='btn btn-success uppercase']" )
+    public WebElement loginAdminRoom;
+
     @FindBy (xpath = "//div[@id='datatable_ajax_wrapper']")
     public WebElement table;
 
