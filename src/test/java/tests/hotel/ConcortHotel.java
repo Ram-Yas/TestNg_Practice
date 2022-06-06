@@ -1,6 +1,7 @@
 package tests.hotel;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import pages.ConcortHotelPage;
 import utilities.ConfigReader;
@@ -18,17 +19,24 @@ public class ConcortHotel {
         concortHotel.advancedButton.click();
         concortHotel.continueLink.click();
         concortHotel.loginPageButton.click();
+        Actions actions = new Actions(Driver.getDriver());
+
         concortHotel.usernameEntry.sendKeys(ConfigReader.getProperty("hotelTrueUsername")+ Keys.ENTER);
-        concortHotel.usernameEntry.sendKeys(ConfigReader.getProperty("hotelTruePassword")+Keys.ENTER);
+        concortHotel.userPasswordEntry.sendKeys(ConfigReader.getProperty("hotelTruePassword")+Keys.ENTER);
         concortHotel.loginSubmitButton.sendKeys(Keys.ENTER);
         Driver.getDriver().get(ConfigReader.getProperty("concortHotelRoomAdminUrl"));
         //○ Username : manager ○ Password : Manager2!
 
     }
 
-//● table( ) metodu oluşturun
-//○ Tüm table body’sinin boyutunu(sutun sayisi) bulun. /tbody
-//○ Table’daki tum body’i ve başlıkları(headers) konsolda yazdırın.
+    @Test
+    public void table() {
+        //● table( ) metodu oluşturun
+        //○ Tüm table body’sinin boyutunu(sutun sayisi) bulun. /tbody
+        //○ Table’daki tum body’i ve başlıkları(headers) konsolda yazdırın.
+
+    }
+
 //● printRows( ) metodu oluşturun //tr
 //○ table body’sinde bulunan toplam satir(row) sayısını bulun.
 //○ Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
